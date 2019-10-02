@@ -1,0 +1,22 @@
+--- aspell6-de-20161207-7-0/configure~	2019-07-23 05:48:43.000000000 +0000
++++ aspell6-de-20161207-7-0/configure	2019-10-02 14:13:13.695600362 +0000
+@@ -43,9 +43,7 @@
+       envvar=`expr "x$option" : 'x\([^=]*\)='`
+       optarg=`expr "x$option" : 'x[^=]*=\(.*\)'`
+       # Reject names that are not valid shell variable names.
+-      expr "x$envvar" : ".*[^_$cr_alnum]" >/dev/null &&
+-        { echo "$as_me: error: invalid variable name: $envvar" >&2
+-      { (exit 1); exit 1; }; }
++      expr "x$envvar" : ".*[^_$cr_alnum]" >/dev/null && continue
+       #echo $envvar $optarg
+       optarg=`echo "$optarg" | sed "s/'/'\\\\\\\\''/g"`
+       eval "$envvar='$optarg'"
+@@ -58,8 +56,6 @@
+       exit 0
+       ;;
+     *)
+-      echo "Error: unrecognized option $option";
+-      exit 1 
+     ;;
+   esac
+ done
