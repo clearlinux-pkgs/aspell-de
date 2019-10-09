@@ -7,9 +7,9 @@
 Name     : aspell-de
 Version  : 20161207.7.0
 Release  : 1
-URL      : https://ftp.gnu.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
-Source0  : https://ftp.gnu.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
-Source1 : https://ftp.gnu.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2.sig
+URL      : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
+Source0  : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
+Source1 : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2.sig
 Summary  : German dictionary for aspell
 Group    : Development/Tools
 License  : GPL-2.0
