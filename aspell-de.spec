@@ -6,11 +6,11 @@
 #
 Name     : aspell-de
 Version  : 20161207.7.0
-Release  : 1
+Release  : 2
 URL      : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
 Source0  : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2
-Source1 : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2.sig
-Summary  : German dictionary for aspell
+Source1  : https://mirrors.kernel.org/gnu/aspell/dict/de/aspell6-de-20161207-7-0.tar.bz2.sig
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: aspell-de-license = %{version}-%{release}
@@ -37,6 +37,7 @@ license components for the aspell-de package.
 
 %prep
 %setup -q -n aspell6-de-20161207-7-0
+cd %{_builddir}/aspell6-de-20161207-7-0
 %patch1 -p1
 
 %build
@@ -44,24 +45,23 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570025679
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1604364556
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1570025679
+export SOURCE_DATE_EPOCH=1604364556
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/aspell-de
-cp Copyright %{buildroot}/usr/share/package-licenses/aspell-de/Copyright
+cp %{_builddir}/aspell6-de-20161207-7-0/Copyright %{buildroot}/usr/share/package-licenses/aspell-de/5e720d0c14e06e22d41a5c235c2b22e0efc2b8c0
 %make_install
 
 %files
@@ -82,4 +82,4 @@ cp Copyright %{buildroot}/usr/share/package-licenses/aspell-de/Copyright
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/aspell-de/Copyright
+/usr/share/package-licenses/aspell-de/5e720d0c14e06e22d41a5c235c2b22e0efc2b8c0
